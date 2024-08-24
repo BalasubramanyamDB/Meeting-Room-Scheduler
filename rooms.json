@@ -1,0 +1,23 @@
+[
+    {
+        "id": "R1",
+        "name": "R1",
+        "capacity": 3,
+        "status": 1,
+        "projector": 1
+    },
+    {
+        "id": "R2",
+        "name": "R2",
+        "capacity": 10,
+        "status": "1",
+        "projector": "1"
+    },
+    {
+        "id": "R3",
+        "name": "R3",
+        "capacity": 8,
+        "status": "1",
+        "projector": "0"
+    }
+]
