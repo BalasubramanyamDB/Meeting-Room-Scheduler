@@ -159,19 +159,14 @@ def bookingForRecurringMeeting(room_id,  start_time, end_time, start_date, end_d
     epoch_st = int(time.mktime(st_obj.timetuple()))
     epoch_end = int(time.mktime(end_obj.timetuple()))
 
-    print("bkd", booked_room_data)
     if not booked_room_data:
-        # new_data = {}
-        # new_data[room_id] = {}
         data = {}
         while epoch_st != epoch_end: 
             date = datetime.fromtimestamp(epoch_st)
             date_str = date.strftime('%Y-%m-%d')
             data[date_str] = [[start_time, end_time]]
             epoch_st += 86400
-            print("new data", data)
         booked_rooms.append({room_id : data})
-        print("bor",booked_rooms)
         with open("bookings.json", "w") as booking_json:
             json.dump(booked_rooms, booking_json, indent = 4)
         print("BOOKED")
