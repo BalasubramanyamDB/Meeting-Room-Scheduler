@@ -1,5 +1,5 @@
 import json
-from Operations import booking,addToRoomsDB
+from Operations import booking,addToRoomsDB, bookingForRecurringMeeting
 from Room import Room
 while True:
     print("Enter id")
@@ -16,7 +16,7 @@ while True:
         print("No data found") 
         break 
     if role == "admin":
-        print("1.ADD ROOM\n2.BOOK ROOM")
+        print("1.ADD ROOM\n2.BOOK ROOM\n3.BOOK RECURRING MEETING")
         print("Enter choice")
         op = int(input())
         if op == 1:
@@ -46,6 +46,21 @@ while True:
             print("Enter end time(HH:MM:SS)")
             end_time = input()
             booking(id, date, st_time, end_time)
+        
+        if op == 3:
+            print("BOOK RECURRING MEETING ROOM")
+            print("Enter Room ID:")
+            id = input()
+            print("Enter start date(YYYY-MM-DD):")
+            st_date = input()
+            print("Enter end date(YYYY-MM-DD):")
+            end_date = input()
+            print("Enter start time(HH:MM:SS)")
+            st_time = input()
+            print("Enter end time(HH:MM:SS)")
+            end_time = input()
+            bookingForRecurringMeeting(id, st_time, end_time,st_date, end_date)
+
 
             
     else:
